@@ -5,7 +5,7 @@ authors:
   - Will Lewis <will@wflewis.com>
 
 targets:
-  simple-password-generator:
+  spg:
     main: src/simple-password-generator.cr
 
 crystal: 0.26.1
@@ -18,7 +18,6 @@ development_dependencies:
     # version: ~> 1.2.0
     branch: master
 
-# dependencies:
-#   name:
-#     github: user/name
-#     version: ~> 1.0.0
+dependencies:
+  stdimp:
+    github: willamin/stdimp
