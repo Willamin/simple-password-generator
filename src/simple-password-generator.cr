@@ -18,6 +18,7 @@ OptionParser.parse! do |parser|
 
   # add more range options in the future
   parser.on("-a", "--ascii", "only use printable ASCII characters") { o.range = 33..126 }
+  parser.on("-n", "--number", "only use numbers") { o.range = 48..57 }
 
   parser.unknown_args do |args|
     o.length = args[0]?.try(&.to_i) || 64
