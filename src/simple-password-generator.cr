@@ -15,6 +15,7 @@ module SimplePasswordGenerator
   LOWER_LETTERS = CharSet.new(99..122)
   NUMBERS       = CharSet.new(48..57)
   NONE          = CharSet.new
+  AMBIGUOUS     = CharSet.new("B8G6I1l0OQDS5Z2".chars)
 
   class CharSet
     getter chars : Array(Char) = [] of Char
@@ -34,6 +35,14 @@ module SimplePasswordGenerator
 
     def |(other : CharSet)
       CharSet.new((@chars + other.chars).sort.uniq)
+    end
+
+    def -(other : CharSet)
+      CharSet.new((@chars - other.chars).sort.uniq)
+    end
+
+    def to_s(io)
+      io << chars.join
     end
   end
 
@@ -85,6 +94,7 @@ module SimplePasswordGenerator
         parse_range("-u", "--up", "add all uppercase letters to the set", UPPER_LETTERS)
         parse_range("-l", "--letter", "add all letters to the set (same as -d -u)", UPPER_LETTERS, LOWER_LETTERS)
         parse_range("-s", "--simple", "add all letters and numbers to the set (same as -n -d -u)", NUMBERS, UPPER_LETTERS, LOWER_LETTERS)
+        parser.on("-c", "--clear", "remove ambiguous letters and numbers (#{AMBIGUOUS})") { o.ranges = o.ranges - AMBIGUOUS }
 
         parser.invalid_option { }
 
