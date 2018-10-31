@@ -8,7 +8,7 @@ usage: spg [password_length] [num_passwords]
     num_passwords                    how many passwords to generate; defaults to 1 if left blank
     -h, --help                       show this help
 character set options:
-    -a, --ascii                      add all printable ASCII characters to the set
+    -a, --ascii                      add all printable ASCII characters to the set; default if no set options are used
     -n, --number                     add numbers to the set
     -d, --down                       add all lowercase letters to the set
     -u, --up                         add all uppercase letters to the set

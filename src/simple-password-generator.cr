@@ -88,7 +88,7 @@ module SimplePasswordGenerator
 
         parser.separator("character set options:")
         # add more range options in the future
-        parse_range("-a", "--ascii", "add all printable ASCII characters to the set", ASCII)
+        parse_range("-a", "--ascii", "add all printable ASCII characters to the set; default if no set options are used", ASCII)
         parse_range("-n", "--number", "add numbers to the set", NUMBERS)
         parse_range("-d", "--down", "add all lowercase letters to the set", LOWER_LETTERS)
         parse_range("-u", "--up", "add all uppercase letters to the set", UPPER_LETTERS)
