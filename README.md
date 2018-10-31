@@ -14,6 +14,7 @@ character set options:
     -u, --up                         add all uppercase letters to the set
     -l, --letter                     add all letters to the set (same as -d -u)
     -s, --simple                     add all letters and numbers to the set (same as -n -d -u)
+    -c, --clear                      remove ambiguous letters and numbers (B8G6I1l0OQDS5Z2)
 ```
 
 ## Contributing
